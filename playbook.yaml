@@ -1,5 +1,5 @@
 ---
-- host: localhost
+- hosts: localhost
   connection: local
   tasks:
     - docker_container:
@@ -7,6 +7,6 @@
         image: hyekyung1/myhello:latest
         state: started
         ports:
-          - "80:8080"  
-
+          - "80:8080"
 ...
+
