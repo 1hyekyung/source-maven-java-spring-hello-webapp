@@ -50,6 +50,8 @@ pipeline {
     stage('Run Container') {
       agent { label 'controller' }
       steps {
+        // 기존 컨테이너 있으면 삭제
+        sh 'docker rm -f myhello || true'
         sh 'docker container run --detach --name myhello -p 80:8080 hyekyung1/myhello:latest'
       }
     }
